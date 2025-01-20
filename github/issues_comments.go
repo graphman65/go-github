@@ -26,6 +26,9 @@ type IssueComment struct {
 	URL               *string `json:"url,omitempty"`
 	HTMLURL           *string `json:"html_url,omitempty"`
 	IssueURL          *string `json:"issue_url,omitempty"`
+
+	// Indicates whether the comment was made by a GitHub App.
+	PerformedViaGithubApp *App `json:"performed_via_github_app,omitempty"`
 }
 
 func (i IssueComment) String() string {

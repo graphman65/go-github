@@ -43,6 +43,9 @@ type PullRequestComment struct {
 	PullRequestURL    *string `json:"pull_request_url,omitempty"`
 	// Can be one of: LINE, FILE from https://docs.github.com/rest/pulls/comments#create-a-review-comment-for-a-pull-request
 	SubjectType *string `json:"subject_type,omitempty"`
+
+	// The following will be populated if the event was performed by an App
+	PerformedViaGithubApp *App `json:"performed_via_github_app,omitempty"`
 }
 
 func (p PullRequestComment) String() string {
